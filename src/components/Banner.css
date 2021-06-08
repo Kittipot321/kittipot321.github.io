@@ -1,0 +1,12 @@
+.display-3{
+    text-align: center;
+}
+.picture{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 60%;
+}

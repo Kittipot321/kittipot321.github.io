@@ -1,0 +1,10 @@
+.github-icon{
+    transition: 0.3s;
+    font-size: 24pt;
+    color:gray;
+    opacity: 0.6;
+}
+.github-icon:hover{
+    opacity: 1;
+    color: black;
+}

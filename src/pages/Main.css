@@ -1,0 +1,8 @@
+.skill-font{
+    text-align: center;
+    display: flex;
+}
+.font-awesome i{
+    font-size: 48pt;
+    color:grey;
+}
