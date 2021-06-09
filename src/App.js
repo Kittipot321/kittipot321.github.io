@@ -8,19 +8,11 @@ function App() {
   return (
     <div>
       <Router>
+      <Navbars/>
         <Switch>
-          <Route exact path="/">
-            <Navbars/>
-            <Main/>
-          </Route>
-          <Route path="/education">
-            <Navbars/>
-            <Education/>
-          </Route>
-          <Route path="/projects">
-            <Navbars/>
-            <Projects/>
-          </Route>
+          <Route exact path="/" component={Main}/>
+          <Route path="/education" component={Education}/>
+          <Route path="/projects" component={Projects}/>
         </Switch>
       </Router>
     </div>
