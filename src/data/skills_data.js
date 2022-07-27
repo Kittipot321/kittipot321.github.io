@@ -1,11 +1,13 @@
 export const skills = [
     "Django",
     "React",
-    "Vue.JS",
+    "Vue.js",
     "HTML",
     "CSS",
-    "Javascript",
+    "JavaScript",
+    "TypeScript",
     "Go",
+    "Python",
     "Java",
     "C#"
 ]
