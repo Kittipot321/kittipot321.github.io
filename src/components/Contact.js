@@ -34,30 +34,17 @@ export default function Contact() {
             frameBorder={0}
             marginHeight={0}
             marginWidth={0}
-            style={{ filter: "opacity(0.7)" }}
+            style={{ filter: "opacity(0.9)" }}
             src="https://www.google.com/maps/embed/v1/place?q=damutprakarn&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
           />
           <div className="bg-gray-900 relative flex flex-wrap py-6 rounded shadow-md">
-            {/* <div className="lg:w-1/2 px-6">
-                <h2 className="title-font font-semibold text-white tracking-widest text-xs">
-                  ADDRESS
-                </h2>
-                <p className="mt-1">
-                  97 Warren St. <br />
-                  New York, NY 10007
-                </p>
-              </div> */}
             <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
               <h2 className="title-font font-semibold text-white tracking-widest text-xs">
-                EMAIL
+                Email
               </h2>
               <a href="#f" className="text-indigo-400 leading-relaxed">
                 Kittipot321@gmail.com
               </a>
-              {/* <h2 className="title-font font-semibold text-white tracking-widest text-xs mt-4">
-                  PHONE
-                </h2>
-                <p className="leading-relaxed">123-456-7890</p> */}
             </div>
           </div>
         </div>
@@ -82,6 +69,7 @@ export default function Contact() {
               name="name"
               className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               onChange={(e) => setName(e.target.value)}
+              required
             />
           </div>
           <div className="relative mb-4">
@@ -94,6 +82,7 @@ export default function Contact() {
               name="email"
               className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
           <div className="relative mb-4">
@@ -107,11 +96,12 @@ export default function Contact() {
               name="message"
               className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
               onChange={(e) => setMessage(e.target.value)}
+              required
             />
           </div>
           <button
             type="submit"
-            className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+            className="transition text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
             Submit
           </button>
         </form>
