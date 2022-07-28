@@ -37,16 +37,6 @@ export default function Contact() {
             style={{ filter: "opacity(0.9)" }}
             src="https://www.google.com/maps/embed/v1/place?q=damutprakarn&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
           />
-          <div className="bg-gray-900 relative flex flex-wrap py-6 rounded shadow-md">
-            <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
-              <h2 className="title-font font-semibold text-white tracking-widest text-xs">
-                Email
-              </h2>
-              <a href="#f" className="text-indigo-400 leading-relaxed">
-                Kittipot321@gmail.com
-              </a>
-            </div>
-          </div>
         </div>
         <form
           netlify
@@ -57,7 +47,7 @@ export default function Contact() {
             Hire Me
           </h2>
           <p className="leading-relaxed mb-5">
-            When you are interested, you can contact me. You can fill in your name, email and anything you want to tell me here.
+            When you are interested, you can contact me. You can fill in your name, email and anything you want to tell me here. <u><b>(Cannot send email!)</b></u>
           </p>
           <div className="relative mb-4">
             <label htmlFor="name" className="leading-7 text-sm text-gray-400">

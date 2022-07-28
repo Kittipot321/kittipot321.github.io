@@ -3,7 +3,7 @@ import Navbar from '../src/components/Navbar'
 import About from '../src/components/About'
 import Skills from '../src/components/Skills'
 import Projects from '../src/components/Projects'
-// import Testimonials from '../src/components/Testimonials'
+import Socials from '../src/components/Socials'
 import Contact from '../src/components/Contact'
 import Footer from '../src/components/Footer'
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <About/>
       <Skills/>
       <Projects/>
-      {/* <Testimonials/> */}
+      <Socials/>
       <Contact/>
       <Footer/>
     </main>
