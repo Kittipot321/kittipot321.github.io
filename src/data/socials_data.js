@@ -10,5 +10,9 @@ export const socials = [
     {
         name:"Email",
         href:"mailto:Kittipot321@gmail.com"
+    },
+    {
+        name:"Sololearn",
+        href:"https://www.sololearn.com/profile/6007488"
     }
 ]

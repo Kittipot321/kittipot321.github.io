@@ -8,13 +8,13 @@ import Contact from '../src/components/Contact'
 import Footer from '../src/components/Footer'
 function App() {
   return (
-    <main className="text-gray-400 bg-gray-900 body-font">
+    <main className="text-gray-400 body-font" id="about">
       <Navbar/>
       <About/>
       <Skills/>
       <Projects/>
       <Socials/>
-      <Contact/>
+      {/* <Contact/> */}
       <Footer/>
     </main>
   );

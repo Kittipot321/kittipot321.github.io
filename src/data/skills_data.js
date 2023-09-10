@@ -8,6 +8,7 @@ export const skills = [
     "TypeScript",
     "Go",
     "Python",
-    "Java",
-    "C#"
+    "NestJS",
+    "SQL",
+    "C# (API)"
 ]

@@ -1,4 +1,12 @@
+import { useTranslation } from "react-i18next";
+import SmoothscrollLink from "./SmoothscrollLink";
+
 function Navbar() {
+    const { t, i18n } = useTranslation();
+
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng);
+    };
     return (
         <header className="bg-gray-800 md:sticky top-0 z-10">
             <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -8,18 +16,22 @@ function Navbar() {
                     </a>
                 </a>
                 <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
-                    <a href="#skills" className="mr-5 hover:text-white">
-                        Skills
-                    </a>
-                    <a href="#projects" className="mr-5 hover:text-white">
-                        Projects
-                    </a>
-                    <a href="#social" className="mr-5 hover:text-white">
-                        Social
-                    </a>
-                    <a href="#contact" className="mr-5 hover:text-white">
-                        Contact
-                    </a>
+                    <SmoothscrollLink targetId={"about"} title={t("navbar.nav1")} />
+                    <SmoothscrollLink targetId={"skills"} title={t("navbar.nav2")} />
+                    <SmoothscrollLink targetId={"projects"} title={t("navbar.nav3")} />
+                    <SmoothscrollLink targetId={"social"} title={t("navbar.nav4")} />
+                </nav>
+                <nav className="flex flex-wrap items-center text-base" style={{cursor: "pointer"}}>
+                    {i18n.language === "th" ? (
+                        <div onClick={() => changeLanguage("en")}>
+                            EN
+                        </div>
+                    ): (
+                        <div onClick={() => changeLanguage("th")}>
+                            TH
+                        </div>
+                    )}
+
                 </nav>
                 {/* <a
                     href="#contact"

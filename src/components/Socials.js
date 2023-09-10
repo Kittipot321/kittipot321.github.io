@@ -5,8 +5,8 @@ import Fade from 'react-reveal/Fade';
 
 export default function Socials() {
   return (
-    <section id="social">
-      <div className="container px-5 py-10 mx-auto text-center">
+    <section id="social" style={{scrollMarginTop: '100px'}}>
+      <div className="container-fluid px-5 py-10 mx-auto text-center bg-gray-900">
         <div className="flex flex-col w-full mb-20">
           <UsersIcon className="mx-auto w-10 inline-block mb-4" />
           <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white">
@@ -20,7 +20,7 @@ export default function Socials() {
           <Fade>
             {socials.map((social) => (
               <a href={social.href} key={social.name} className="p-2 sm:w-1/2 w-full">
-                <div className="bg-gray-800 rounded flex p-4 h-full items-center">
+                <div className="bg-gray-800 rounded flex p-4 h-full items-center justify-between  rounded-full">
                   <span className="title-font font-medium text-white">
                     {social.name}
                   </span>
