@@ -15,7 +15,7 @@ function About() {
                     backgroundSize: 'cover',
                     backgroundAttachment:'fixed',
                     backgroundPosition: 'bottom',
-                    minHeight: '80vh', // Ensure the background covers the full viewport height
+                    minHeight: '80vh', // Ensure the background covers the full viewport heights
                   }}
             >
                 <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
