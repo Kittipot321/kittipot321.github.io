@@ -1,8 +1,26 @@
 {
-    "navbar": {
-        "nav1": "Home",
-        "nav2": "Skills",
-        "nav3": "Projects",
-        "nav4": "Social"
-    }
+  "navbar": {
+    "nav1": "Home",
+    "nav2": "Skills",
+    "nav3": "Projects",
+    "nav4": "Social"
+  },
+  "about": {
+    "header_1": "Hi, I'm Kittipot Laorngsri",
+    "header_2": "I'm a Full Stack Developer",
+    "subtitle_1": "I want to apply for a job as a developer, which I am a hardworking person. Responsible, honest, enthusiastic and able to get along well with colleagues. Also, I am someone who likes to learn new things all the time.",
+    "get_resume_button": "Get Resume"
+  },
+  "skill": {
+    "header": "Skills & Technologies",
+    "subtitle": "My programming skills. This is caused by learning from the university, work experience and practicing on your own."
+  },
+  "project": {
+    "header": "Apps I've Built",
+    "subtitle": "My project, which is based on programming from a university project, work experience, online courses and my hobby."
+  },
+  "social": {
+    "header": "Social",
+    "subtitle": "You can follow me on social media and contact me to email. I will share my work and my life."
+  }
 }

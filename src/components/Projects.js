@@ -1,19 +1,25 @@
 import { CodeIcon } from "@heroicons/react/solid";
 import React from "react";
 import { projects } from "../data/project_data";
-import Fade from 'react-reveal/Fade';
+import Fade from "react-reveal/Fade";
+import { useTranslation } from "react-i18next";
 
 export default function Projects() {
+  const { t } = useTranslation();
   return (
-    <section id="projects" className="text-gray-400 bg-gray-900 body-font" style={{scrollMarginTop: '50px'}}>
+    <section
+      id="projects"
+      className="text-gray-400 bg-gray-900 body-font"
+      style={{ scrollMarginTop: "50px" }}
+    >
       <div className="container px-5 py-10 mx-auto text-center lg:px-40">
         <div className="flex flex-col w-full mb-20">
           <CodeIcon className="mx-auto inline-block w-10 mb-4" />
           <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white">
-            Apps I've Built
+            {t("project.header")}
           </h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-            My project, which is based on programming from a university project, work experience, online courses and my hobby.
+            {t("project.subtitle")}
           </p>
         </div>
         {/* <div className="grid  grid-rows-4 grid-cols-1 gap-2"> */}
@@ -26,11 +32,7 @@ export default function Projects() {
           </div> */}
           <Fade>
             {projects.map((project) => (
-              <a
-                href={project.link}
-                key={project.image}
-                className="p-2"
-              >
+              <a href={project.link} key={project.image} className="p-2">
                 <div className="relative">
                   <img
                     alt="gallery"
@@ -38,9 +40,13 @@ export default function Projects() {
                     src={project.image}
                   />
                   <div className="transition px-8 relative z-10 w-full h-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100 rounded-md">
-                    {project.year === new Date().getFullYear() && (<div className="text-left absolute inset-x-0 ml-3 mt-3 rounded-full">
-                      <p className="w-14 rounded-full bg-red-100 text-red-800 font-bold px-2.5">New!</p>
-                    </div>)}
+                    {project.year === new Date().getFullYear() && (
+                      <div className="text-left absolute inset-x-0 ml-3 mt-3 rounded-full">
+                        <p className="w-14 rounded-full bg-red-100 text-red-800 font-bold px-2.5">
+                          New!
+                        </p>
+                      </div>
+                    )}
                     <div className="py-10 flex flex-col items-stretch">
                       <h2 className="tracking-widest text-sm title-font font-medium text-green-400 mb-1">
                         {project.subtitle}
@@ -48,7 +54,9 @@ export default function Projects() {
                       <h1 className="title-font text-lg font-medium text-white mb-3">
                         {project.title}
                       </h1>
-                      <p className="leading-relaxed flex-1">{project.description}</p>
+                      <p className="leading-relaxed flex-1">
+                        {project.description}
+                      </p>
                     </div>
                   </div>
                 </div>

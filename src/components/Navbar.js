@@ -1,46 +1,41 @@
 import { useTranslation } from "react-i18next";
 import SmoothscrollLink from "./SmoothscrollLink";
+import SwitchLanguages from "./common/SwitchLanguages";
 
 function Navbar() {
-    const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
-    const changeLanguage = (lng) => {
-        i18n.changeLanguage(lng);
-    };
-    return (
-        <header className="bg-gray-800 md:sticky top-0 z-10">
-            <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-                <a href="#k" className="title-font font-medium text-white mb-4 md:mb-0">
-                    <a href="/" className="ml-3 text-xl">
-                        Kittipot
-                    </a>
-                </a>
-                <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
-                    <SmoothscrollLink targetId={"about"} title={t("navbar.nav1")} />
-                    <SmoothscrollLink targetId={"skills"} title={t("navbar.nav2")} />
-                    <SmoothscrollLink targetId={"projects"} title={t("navbar.nav3")} />
-                    <SmoothscrollLink targetId={"social"} title={t("navbar.nav4")} />
-                </nav>
-                <nav className="flex flex-wrap items-center text-base" style={{cursor: "pointer"}}>
-                    {i18n.language === "th" ? (
-                        <div onClick={() => changeLanguage("en")}>
-                            EN
-                        </div>
-                    ): (
-                        <div onClick={() => changeLanguage("th")}>
-                            TH
-                        </div>
-                    )}
-
-                </nav>
-                {/* <a
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+  return (
+    <header className="bg-gray-800 md:sticky top-0 z-10">
+      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a href="#k" className="title-font font-medium text-white mb-4 md:mb-0">
+          <a href="/" className="ml-3 text-xl">
+            Kittipot
+          </a>
+        </a>
+        <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
+          <SmoothscrollLink targetId={"about"} title={t("navbar.nav1")} />
+          <SmoothscrollLink targetId={"skills"} title={t("navbar.nav2")} />
+          <SmoothscrollLink targetId={"projects"} title={t("navbar.nav3")} />
+          <SmoothscrollLink targetId={"social"} title={t("navbar.nav4")} />
+        </nav>
+        <nav
+          className="flex flex-wrap items-center text-base"
+          style={{ cursor: "pointer" }}
+        >
+          <SwitchLanguages />
+        </nav>
+        {/* <a
                     href="#contact"
                     className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">
                     Hire Me
                     <ArrowRightIcon className="w-4 h-4 ml-1" />
                 </a> */}
-            </div>
-        </header>
-    );
+      </div>
+    </header>
+  );
 }
-export default Navbar
+export default Navbar;
