@@ -48,7 +48,7 @@ export default function Projects() {
                     <img
                       alt="gallery"
                       className="absolute inset-0 w-full h-full object-cover object-center rounded-md"
-                      src={project?.image_url}
+                      src={project?.img_url || "https://picsum.photos/1200/500"}
                     />
                     <div className="transition px-8 relative z-10 w-full h-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100 rounded-md">
                       {project?.year === new Date().getFullYear() && (
