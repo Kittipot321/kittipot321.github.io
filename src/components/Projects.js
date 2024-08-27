@@ -3,13 +3,18 @@ import { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 import { useTranslation } from "react-i18next";
 import { getProjects } from "../api/data";
+import Loading from "./common/Loading";
 
 export default function Projects() {
+  const [isLoading, setIsLoading] = useState(true);
   const [projects, setProjects] = useState([]);
 
   const fetchProjects = async () => {
-    const { data } = await getProjects();
-    setProjects(data?.data);
+    const { data, status } = await getProjects();
+    if (status === 200) {
+      setProjects(data?.data);
+      setIsLoading(false);
+    }
   };
   useEffect(() => {
     fetchProjects();
@@ -40,40 +45,50 @@ export default function Projects() {
             </div>
             <button class="bg-white rounded-full mt-5 px-5 py-2">Action Button</button>
           </div> */}
-          <Fade>
-            {projects.length > 0 &&
-              projects.map((project, index) => (
-                <a href={project?.link} key={index.toString()} className="p-2">
-                  <div className="relative">
-                    <img
-                      alt="gallery"
-                      className="absolute inset-0 w-full h-full object-cover object-center rounded-md"
-                      src={project?.img_url || "https://picsum.photos/1200/500"}
-                    />
-                    <div className="transition px-8 relative z-10 w-full h-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100 rounded-md">
-                      {project?.year === new Date().getFullYear() && (
-                        <div className="text-left absolute inset-x-0 ml-3 mt-3 rounded-full">
-                          <p className="w-14 rounded-full bg-red-100 text-red-800 font-bold px-2.5">
-                            New!
+          {!isLoading ? (
+            <Fade>
+              {projects.length > 0 &&
+                projects.map((project, index) => (
+                  <a
+                    href={project?.link}
+                    key={index.toString()}
+                    className="p-2"
+                  >
+                    <div className="relative">
+                      <img
+                        alt="gallery"
+                        className="absolute inset-0 w-full h-full object-cover object-center rounded-md"
+                        src={
+                          project?.img_url || "https://picsum.photos/1200/500"
+                        }
+                      />
+                      <div className="transition px-8 relative z-10 w-full h-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100 rounded-md">
+                        {project?.year === new Date().getFullYear() && (
+                          <div className="text-left absolute inset-x-0 ml-3 mt-3 rounded-full">
+                            <p className="w-14 rounded-full bg-red-100 text-red-800 font-bold px-2.5">
+                              New!
+                            </p>
+                          </div>
+                        )}
+                        <div className="py-10 flex flex-col items-stretch">
+                          <h2 className="tracking-widest text-sm title-font font-medium text-green-400 mb-1">
+                            {project?.subtitle}
+                          </h2>
+                          <h1 className="title-font text-lg font-medium text-white mb-3">
+                            {project?.project_name}
+                          </h1>
+                          <p className="leading-relaxed flex-1">
+                            {project?.description || "No description"}
                           </p>
                         </div>
-                      )}
-                      <div className="py-10 flex flex-col items-stretch">
-                        <h2 className="tracking-widest text-sm title-font font-medium text-green-400 mb-1">
-                          {project?.subtitle}
-                        </h2>
-                        <h1 className="title-font text-lg font-medium text-white mb-3">
-                          {project?.project_name}
-                        </h1>
-                        <p className="leading-relaxed flex-1">
-                          {project?.description || "No description"}
-                        </p>
                       </div>
                     </div>
-                  </div>
-                </a>
-              ))}
-          </Fade>
+                  </a>
+                ))}
+            </Fade>
+          ) : (
+            <Loading />
+          )}
         </div>
       </div>
     </section>
